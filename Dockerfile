@@ -1,4 +1,6 @@
-FROM ubuntu:latest
-LABEL authors="Momo"
-
-ENTRYPOINT ["top", "-b"]
+FROM eclipse-temurin:25-jdk
+WORKDIR /app
+COPY . .
+RUN chmod +x mvnw
+RUN ./mvnw clearn package -DskipTests
+CMD ["java", "-jar", "target/*.jar"]
