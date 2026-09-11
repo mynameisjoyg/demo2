@@ -6,10 +6,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class MyRestController {
 
-    @RequestMapping("/study")
-    public SchoolClass study(){
+    @RequestMapping("/myStudy")
+    public SchoolClass myStudy(){
         SchoolClass sc = new SchoolClass();
-        sc.setSchoolClassName("Chinese");
+        sc.addSubject("Chinese");
+        sc.addSubject("English");
+        sc.addSubject("Math");
         return sc;
     }
 }

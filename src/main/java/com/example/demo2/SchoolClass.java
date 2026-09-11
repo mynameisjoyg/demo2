@@ -1,13 +1,16 @@
 package com.example.demo2;
 
+import java.util.ArrayList;
+
 public class SchoolClass {
-    public String SchoolClassName;
-    public void setSchoolClassName(String cn){
-        this.SchoolClassName = cn;
+    public ArrayList<String> allSubjects = new ArrayList<String>();
+
+    public void addSubject(String sb){
+        allSubjects.add(sb);
     }
 
-    public String getSchoolClassName(){
-        return SchoolClassName;
+    public ArrayList<String> getAllSubjects(){
+        return allSubjects;
     }
 
 }
