@@ -36,9 +36,9 @@ public class MyRestController {
     }
 
     @RequestMapping("/getAllStudents")
-    public List<Student> getAllStudents(){
+    public List<Student> getAllStudents(@RequestParam int id){
         System.out.println("getAllStudents 呼叫中");
-        String sql = "SELECT * FROM student";
+        String sql = "SELECT * FROM student WHERE id = "+id;
         Map<String, Object> map = new HashMap<>();
         StudentRowMapper srm = new StudentRowMapper();
         List<Student> list = namedParameterJdbcOperations.query(sql, map, srm);
